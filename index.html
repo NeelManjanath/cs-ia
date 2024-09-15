@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    Hello world
-</body>
+    <script src="https://unkpg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+  </head>
+  <body>
+    <input type="file" id="input" />
+    <script>
+      var input = document.getElementById("input");
+      input.addEventListener('change', function () {    
+        console.log('hello')
+        readXlsxFile(input.files[0]).then(function (data) {
+          console.log(data);
+        });
+      });
+    </script>
+  </body>
 </html>
